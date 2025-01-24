@@ -22,20 +22,22 @@ print(df.iloc[:30])
 
 df.to_csv('labels_mbrset_modified.csv', index=False)
 
+df2 = pd.read_csv('labels_mbrset_modified.csv')
+
 
 # --------------------------------------
 # the below code is to create new csv files based on values for final icdr and final edema values
 # ---------------------------------------
 
-df.loc[df['final_icdr'] == 4].to_csv('DRSeverityGrade4.csv', index=False)
-df.loc[df['final_icdr'] == 3].to_csv('DRSeverityGrade3.csv', index=False)
-df.loc[df['final_icdr'] == 2].to_csv('DRSeverityGrade2.csv', index=False)
-df.loc[df['final_icdr'] == 1].to_csv('DRSeverityGrade1.csv', index=False)
-df.loc[df['final_icdr'] == 0].to_csv('DRSeverityGrade0.csv', index=False)
+df2.loc[df2['final_icdr'] == 4].to_csv('DRSeverityGrade4.csv', index=False)
+df2.loc[df2['final_icdr'] == 3].to_csv('DRSeverityGrade3.csv', index=False)
+df2.loc[df2['final_icdr'] == 2].to_csv('DRSeverityGrade2.csv', index=False)
+df2.loc[df2['final_icdr'] == 1].to_csv('DRSeverityGrade1.csv', index=False)
+df2.loc[df2['final_icdr'] == 0].to_csv('DRSeverityGrade0.csv', index=False)
 
 
-df.loc[df['final_edema'] == 'yes'].to_csv('EdemaPositive.csv', index=False)
-df.loc[df['final_edema'] == 'no'].to_csv('EdemaNegative.csv', index=False)
+df2.loc[df2['final_edema'] == 'yes'].to_csv('EdemaPositive.csv', index=False)
+df2.loc[df2['final_edema'] == 'no'].to_csv('EdemaNegative.csv', index=False)
 
 
 

@@ -1,5 +1,30 @@
 import os
 from collections import Counter
+import pandas as pd
+
+df1 = pd.read_csv("C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/csvSorter/EdemaNegative.csv")
+df2 = pd.read_csv("C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/csvSorter/EdemaPositive.csv")
+
+
+# Find common file names in both DataFrames
+common_files = set(df1['file']).intersection(set(df2['file']))
+
+# Print matching file names
+for f in common_files:
+    print(f" found {f}")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def get_filenames(folder):
     """Retrieve a list of filenames in a folder."""
@@ -27,7 +52,7 @@ def check_for_duplicate_filenames(folder1, folder2, folder3):
         print("No duplicate filenames found across the folders.")
 
 # Directories to check
-folder1 = 'C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/train/DR Severity 4'
+folder1 = 'C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/Sorted-images/DR Severity 4'
 folder2 = 'C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/test/DR Severity 4'
 folder3 = 'C:/Users/HR/Downloads/mbrset-a-mobile-brazilian-retinal-dataset-1.0/mbrset-a-mobile-brazilian-retinal-dataset-1.0/validate/DR Severity 4'
 
